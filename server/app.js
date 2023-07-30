@@ -1,17 +1,13 @@
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
-const DB = 'mongodb+srv://akhil:akhilgangan@cluster0.rr1psgc.mongodb.net/mernstack?retryWrites=true&w=majority';
+dotenv.config({path:'./config.env'});
+require('./db/conn');
 
-mongoose.connect(DB,{
-    // useNewUrlParser:true,
-    // useCreateIndex:true,
-    // useUnifiedTopology:true,
-    // useFindAndModify:false
-}).then(()=>{
-    console.log(`connection successfully`);
-}).catch((err)=>{console.log(`no connection`)});
+const PORT = process.env.PORT;
+
 
 //MiddleWare
 const middleware = (req,res,next)=>{
@@ -40,6 +36,6 @@ app.get('/signup',(req,res)=>{
     res.send('Hello Register World from Akhil');
 });
 
-app.listen(3000,()=>{
-    console.log(`server is running at port no 3000`);
+app.listen(PORT,()=>{
+    console.log(`server is running at port no ${PORT}`);
 })
