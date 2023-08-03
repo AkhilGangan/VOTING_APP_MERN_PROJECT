@@ -33,6 +33,7 @@ app.get('/about',middleware,(req,res)=>{
 });
 
 app.get('/contact',(req,res)=>{
+    // res.cookie("test",'akhil')
     res.send('Hello Contact World from Akhil');
 });
 
