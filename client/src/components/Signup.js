@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Home = () => {
+const Signup = () => {
   return (
     <div>
         <p>WELCOME</p>
-        <h1>We Are The MERN Developer</h1>
+        <h1>We Are The SignUp</h1>
     </div>
   )
 }
 
-export default Home
+export default Signup
